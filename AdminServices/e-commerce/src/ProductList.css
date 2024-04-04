@@ -1,0 +1,39 @@
+.product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-item img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.product-details {
+    display: flex;
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.product-details h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.delete-button {
+    color: #3C6E71;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0;
+    margin-right: 50px;
+    align-self: flex-end; 
+}

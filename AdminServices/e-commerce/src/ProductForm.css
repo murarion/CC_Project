@@ -1,0 +1,78 @@
+/* It contains the styling for the ProductForm component */
+
+.ProductForm {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    margin: 88%;
+    text-align: center;
+    /* margin: auto; Center the form horizontally */
+    margin-top: 20px;
+}
+
+.ProductForm h1 {
+    font-size: x-large;
+    text-align: center;
+    color: #1e90ff; /* Blue color for the heading */
+}
+
+.ProductForm fieldset {
+    border: none;
+}
+
+.ProductForm input,
+.ProductForm select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #555; /* White color for input text */
+    background-color: #fff; /* White background color for input */
+}
+
+.ProductForm ::placeholder {
+    color: #555; /* White color for input placeholders */
+}
+
+.ProductForm input[type="radio"],
+.ProductForm input[type="checkbox"] {
+    display: inline;
+    width: auto;
+}
+
+.ProductForm label {
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+.ProductForm button {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #1e90ff; /* Blue color for the button */
+    width: 40%;
+    font-size: 16px;
+}
+
+.ProductForm textarea {
+    resize: none;
+    width: 98%;
+    min-height: 100px;
+    max-height: 150px;
+}
