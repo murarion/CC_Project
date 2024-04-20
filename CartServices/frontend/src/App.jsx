@@ -1,22 +1,23 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Cart from './pages/Cart'
-import Shop from './pages/Shop'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar'
-import ShopContextProvider from './pages/ShopContext'
+import DisplayProd from "./pages/Display";
+import ProdDet from './pages/ProdDetails';
+import End from './pages/End';
+import Cart from './pages/Cart';
 
 const App = () => {
   return (
     <div className='App'>
-      <ShopContextProvider>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </Router>
-      </ShopContextProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/display" element={<DisplayProd />} />
+          <Route path="/display/:id" element={<ProdDet />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/end" element={<End />} />
+        </Routes>
+      </Router>
     </div>
   );
 };

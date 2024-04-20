@@ -8,7 +8,7 @@ export const ShopContextProvider = (props) => {
 
   useEffect(() => {
     // Fetch products from the database
-    fetch("http://localhost:4000/api/products")
+    fetch("http://localhost:4000/api/display")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data); // Update products state with fetched data

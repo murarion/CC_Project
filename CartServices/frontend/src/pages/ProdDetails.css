@@ -1,0 +1,49 @@
+/* ProdDetails.css */
+
+/* Style for the container */
+.container {
+    display: flex; /* Use flexbox */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the product image */
+.book-image {
+    width: 200px;
+    height: auto;
+    margin-right: 20px; /* Add margin to separate image and details */
+}
+
+/* Style for the product information */
+.info {
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow details to grow and fill available space */
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+/* Style for the buttons container */
+.btn-container {
+    text-align: center; /* Align buttons to the center */
+}
+
+/* Style for the buttons */
+.btn1,
+.btn2 {
+    padding: 10px 20px;
+    margin: 0 5px; /* Adjust margin as needed */
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn1:hover,
+.btn2:hover {
+    background-color: #353535;
+}

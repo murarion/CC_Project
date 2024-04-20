@@ -12,7 +12,7 @@ const Shop = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/products');
+            const response = await fetch('http://localhost:4000/api/display');
             if (response.ok) {
                 const data = await response.json();
                 setProducts(data);
