@@ -25,12 +25,26 @@ router.get('/display/:id',async(req,res) =>{
 	console.log(error);
 	}
 })
-router.get('/searchres/:gender',async(req,res) =>{
+router.get('/searchgender/:gender',async(req,res) =>{
 	let products;
 	const findgender=req.params.gender;
 	
 	try{
 		productModel.find({gender:findgender},{'productname':1,'brand':1,'productimg':1}).then(foundproducts=>res.json(foundproducts));
+		
+ 	}catch(error){
+		console.log(error)
+	};
+	
+
+})
+router.get('/searchname/:name',async(req,res) =>{
+	let products;
+	const findname=req.params.name;
+	
+	try{
+		productModel.find({productname: findname},{'productname':1,'brand':1,'productimg':1}).then(foundproducts=>res.json(foundproducts));
+		//productModel.find({gender:findgender},{'productname':1,'brand':1,'productimg':1}).then(foundproducts=>res.json(foundproducts));
 		
  	}catch(error){
 		console.log(error)
