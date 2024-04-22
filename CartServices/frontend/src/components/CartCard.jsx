@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card, Button, Row, Col } from 'react-bootstrap';
-
+import './CartCard.css';
 import axios from 'axios'
 
 const CartCard = ({ item }) => {
@@ -60,7 +60,7 @@ const CartCard = ({ item }) => {
                         <Card.Text style={{ fontSize: '20px', color: '#3C6E71' }}>
                             Size : S
                             <br />
-                            Price : {item.price}
+                            Price : Rs. {item.price}
                             <br />
                             <button onClick={del} className="b1"> Delete </button>
                             <br />
