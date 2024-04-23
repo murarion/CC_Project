@@ -13,20 +13,16 @@ import Footer from "../components/Footer";
 
 const Search = () =>{
 	
-
-		
 	const [name, setSearchTerm] = useState("")
-
-	
 		const change=(e)=>
 		{
 		
 			console.log("target val")
-      		 console.log(e.target.value)
+      		console.log(e.target.value)
 			setSearchTerm(e.target.value)
 		}
-				console.log("name")
-      		 console.log(name)
+			console.log("name")
+      		console.log(name)
 	
 	return(
 	   

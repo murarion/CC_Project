@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-to-backend
+  namespace: developmen
+spec:
+  egress:
+  - ports:
+    - port: 4000
+      protocol: TCP
+    to:
+    - podSelector:
+        matchLabels:
+          name: io.kompose.network/app-network=true,io.kompose.service=server,pod-template-hash=58786d4f89
+  podSelector:
+    matchLabels:
+      name: io.kompose.network/app-network=true,io.kompose.service=client,pod-template-hash=7c765f77f
+  policyTypes:
+  - Ingress
+  - Egress

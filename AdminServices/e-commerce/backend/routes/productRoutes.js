@@ -27,7 +27,7 @@ router.get('/productlist', (req,res) => {
 	}
 })
 
-router.delete('/upload/:productId', async (req, res) => {
+router.delete('/upload/:productid', async (req, res) => {
     try {
         const { productId } = req.params;
         const result = await productsmodel.findOneAndDelete({ productId: productId });

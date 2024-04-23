@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\kashi\kompose.exe convert -f ../docker-compose.yml
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: server2
+  name: server2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: server2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\kashi\kompose.exe convert -f ../docker-compose.yml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/app-network: "true"
+        io.kompose.service: server2
+    spec:
+      containers:
+        - args:
+            - node
+            - index.js
+          env:
+            - name: NODE_ENV
+              value: development
+          image: kashish18/server2:first
+          name: myapp-node-server2
+          ports:
+            - containerPort: 5000
+          resources: {}
+          volumeMounts:
+            - mountPath: /usr/src/app
+              name: server2-claim0
+            - mountPath: /usr/src/app/node_modules
+              name: server2-claim1
+      restartPolicy: Always
+      volumes:
+        - name: server2-claim0
+          persistentVolumeClaim:
+            claimName: server2-claim0
+        - name: server2-claim1
+          persistentVolumeClaim:
+            claimName: server2-claim1
+status: {}
