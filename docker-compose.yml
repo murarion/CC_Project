@@ -1,0 +1,121 @@
+version: "3.7"
+
+services:
+  server1:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    image: myapp-server1
+    container_name: myapp-node-server1
+    command: node index.js
+    volumes:
+      - ./Frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "4000:4000" # Adjusted port for backend 1
+    depends_on:
+      - mongo
+
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+
+  server2:
+    build:
+      context: ./Backend_N
+      dockerfile: Dockerfile
+    image: myapp-server2
+    container_name: myapp-node-server2
+    command: node index.js
+    volumes:
+      - ./Frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "5000:5000" # Adjusted port for backend 2
+    depends_on:
+      - mongo
+
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+
+  server3:
+    build:
+      context: ./Backend_P
+      dockerfile: Dockerfile
+    image: myapp-server3
+    container_name: myapp-node-server3
+    command: node index.js
+    volumes:
+      - ./Frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "7000:7000" # Adjusted port for backend 3
+    depends_on:
+      - mongo
+
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+
+  server4:
+    build:
+      context: ./Backend_M
+      dockerfile: Dockerfile
+    image: myapp-server4
+    container_name: myapp-node-server4
+    command: node index.js
+    volumes:
+      - ./Frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8000:8000" # Adjusted port for backend 4
+    depends_on:
+      - mongo
+
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  client:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    image: myapp-client
+    container_name: myapp-react-client
+    command: npm run dev
+    volumes:
+      - ./Frontend/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server1
+      - server2
+      - server3
+      - server4
+    ports:
+      - "5173:5173"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local
