@@ -1,0 +1,50 @@
+/* cartCard.css */
+
+/* Style for the card */
+.card {
+    width: 45rem;
+    margin-top: 10px;
+}
+
+/* Style for the card image */
+.card-img-top {
+    padding-bottom: 40px;
+    width: 170px;
+    float: left;
+    height: 210px;
+}
+
+/* Style for the card body */
+.card-body {
+    padding-bottom: 40px;
+    left: 40px;
+    position: relative;
+}
+
+/* Style for the card title */
+.card-title {
+    font-size: 30px;
+    color: #284B63;
+}
+
+/* Style for the card text */
+.card-text {
+    font-size: 20px;
+    color: #3C6E71;
+}
+
+/* Style for the delete button */
+.b1 {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.b1:hover {
+    background-color: #0056b3;
+}
